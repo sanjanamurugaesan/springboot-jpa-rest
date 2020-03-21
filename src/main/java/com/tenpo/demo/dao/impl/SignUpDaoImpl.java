@@ -1,5 +1,6 @@
-package com.tenpo.demo.dao;
+package com.tenpo.demo.dao.impl;
 
+import com.tenpo.demo.dao.SignUpDao;
 import com.tenpo.demo.entities.User;
 import com.tenpo.demo.exception.RecordNotFoundException;
 import com.tenpo.demo.repo.UserRepository;
@@ -12,17 +13,14 @@ import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
-public class SignUpDaoImpl {
+public class SignUpDaoImpl implements SignUpDao {
     @Autowired
     UserRepository userRepo;
-
     @PersistenceContext
     private EntityManager entityManager;
 
-
-
-
-   @Transactional
+    @Override
+    @Transactional
     public String persist(User user) {
         try{
             user.setPassword(user.getPassword());
@@ -33,6 +31,7 @@ public class SignUpDaoImpl {
             return "DataBase Error Occured. Please try after some time";
         }
     }
+    @Override
     @Transactional
     public String delete(String userId){
        Optional<User> entity = userRepo.findByUserId(userId);

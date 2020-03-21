@@ -1,4 +1,4 @@
-package com.tenpo.demo.dao;
+package com.tenpo.demo.dao.impl;
 
 import com.tenpo.demo.util.Constants;
 import com.tenpo.demo.entities.MathOperation;
