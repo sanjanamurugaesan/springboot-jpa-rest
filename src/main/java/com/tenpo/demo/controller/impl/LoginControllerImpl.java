@@ -1,7 +1,8 @@
-package com.tenpo.demo.controller;
+package com.tenpo.demo.controller.impl;
 
+import com.tenpo.demo.controller.LoginController;
 import com.tenpo.demo.util.Constants;
-import com.tenpo.demo.dao.LoginDaoImpl;
+import com.tenpo.demo.dao.impl.LoginDaoImpl;
 import com.tenpo.demo.entities.User;
 import com.tenpo.demo.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +14,14 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin({"*"})
-public class LoginControllerImpl {
+public class LoginControllerImpl implements LoginController {
     @Autowired
     private LoginDaoImpl loginDao;
     @Autowired
     private UserRepository userRepo;
 
     @RequestMapping("/login")
+    @Override
     public String login(@RequestBody User loginDetails){
         Optional<User> user = userRepo.findByUserId(loginDetails.getUserId());
         String encodedPassword = user.get().getPassword();
@@ -37,6 +39,7 @@ public class LoginControllerImpl {
         }
     }
     @RequestMapping("/logout/{userId}")
+    @Override
     public String logout(@PathVariable String userId){
             int status = loginDao.updateLoginStatus(userId, "N");
             if(status ==1) return Constants.LOGOUT;

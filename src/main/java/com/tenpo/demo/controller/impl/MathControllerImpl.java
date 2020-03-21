@@ -1,7 +1,8 @@
-package com.tenpo.demo.controller;
+package com.tenpo.demo.controller.impl;
 
+import com.tenpo.demo.controller.MathController;
 import com.tenpo.demo.util.Constants;
-import com.tenpo.demo.dao.MathOperationDaoImpl;
+import com.tenpo.demo.dao.impl.MathOperationDaoImpl;
 import com.tenpo.demo.entities.MathOperation;
 import com.tenpo.demo.entities.User;
 import com.tenpo.demo.repo.MathRepository;
@@ -15,7 +16,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin({"*"})
-public class MathControllerImpl {
+public class MathControllerImpl implements MathController {
 
     @Autowired
     private MathOperationDaoImpl sumDao;
@@ -27,11 +28,13 @@ public class MathControllerImpl {
     private UserRepository userRepo;
 
     @RequestMapping("/getAuditDetails")
+    @Override
     public List<MathOperation> getMathAuditDetails(){
         return auditRepo.findAll();
     }
 
     @RequestMapping("/sum/{userId}")
+    @Override
     public String sum(@RequestBody MathOperation sumDetails, @PathVariable String userId){
         Optional<User> user = userRepo.findByUserId(userId);
         if(user.isPresent()){
