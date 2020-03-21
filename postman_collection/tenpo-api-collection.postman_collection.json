@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "7dc17178-4286-4ac0-a3c1-864e433965d9",
+		"name": "tenpo-api-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/addUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Sanjana\",\n\t\"lastName\" : \"Murugesan\",\n\t\"emailId\": \"sanjana.murugesan@gmail.com\",\n\t\"userId\":\"sanjanamurugesan\",\n\t\"password\":\"sanjana123\",\n\t\"isLoggedIn\":\"N\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6080/tenpo-api/addUser",
+					"host": [
+						"localhost"
+					],
+					"port": "6080",
+					"path": [
+						"tenpo-api",
+						"addUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/getUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6080/tenpo-api/getUser/sanjana.murugesan",
+					"host": [
+						"localhost"
+					],
+					"port": "6080",
+					"path": [
+						"tenpo-api",
+						"getUser",
+						"sanjana.murugesan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6080/tenpo-api/getAllUsers",
+					"host": [
+						"localhost"
+					],
+					"port": "6080",
+					"path": [
+						"tenpo-api",
+						"getAllUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userId\":\"sanjanamurugesan\",\n\t\"password\":\"sanjana123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6080/tenpo-api/login/",
+					"host": [
+						"localhost"
+					],
+					"port": "6080",
+					"path": [
+						"tenpo-api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Sanjana\",\n\t\"lastName\" : \"Murugesan\",\n\t\"emailId\": \"sanjana.murugesan@gmail.com\",\n\t\"userId\":\"sanjanamurugesan\",\n\t\"password\":\"sanjana123\",\n\t\"isLoggedIn\":\"N\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6080/tenpo-api/logout/sanjanamurugesan",
+					"host": [
+						"localhost"
+					],
+					"port": "6080",
+					"path": [
+						"tenpo-api",
+						"logout",
+						"sanjanamurugesan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/sum",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userId\": \"sanjanamurugesan\",\n\t\"input1\":\"10\",\n\t\"input2\":\"5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6080/tenpo-api/sum",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6080",
+					"path": [
+						"tenpo-api",
+						"sum"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/getAuditDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6080/tenpo-api/getAuditDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6080",
+					"path": [
+						"tenpo-api",
+						"getAuditDetails"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
