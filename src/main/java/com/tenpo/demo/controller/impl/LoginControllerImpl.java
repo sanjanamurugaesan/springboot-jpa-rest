@@ -24,8 +24,8 @@ public class LoginControllerImpl implements LoginController {
     @Override
     public String login(@RequestBody User loginDetails){
         Optional<User> user = userRepo.findByUserId(loginDetails.getUserId());
-        String encodedPassword = user.get().getPassword();
         if(user.isPresent()){
+            String encodedPassword = user.get().getPassword();
             PasswordEncoder matcher = new BCryptPasswordEncoder();
             System.out.println(matcher.matches(loginDetails.getPassword(),encodedPassword));
             if(matcher.matches(loginDetails.getPassword(),encodedPassword)){
