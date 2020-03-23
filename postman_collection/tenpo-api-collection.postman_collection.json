@@ -39,7 +39,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:6080/tenpo-api/getUser/sanjana.murugesan",
+					"raw": "localhost:6080/tenpo-api/getUser/georgeryan",
 					"host": [
 						"localhost"
 					],
@@ -47,7 +47,7 @@
 					"path": [
 						"tenpo-api",
 						"getUser",
-						"sanjana.murugesan"
+						"georgeryan"
 					]
 				}
 			},
@@ -79,7 +79,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"userId\":\"sanjanamurugesan\",\n\t\"password\":\"sanjana123\"\n}",
+					"raw": "{\n\t\"userId\":\"georgeryan\",\n\t\"password\":\"Elohim@123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -116,7 +116,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:6080/tenpo-api/logout/sanjanamurugesan",
+					"raw": "localhost:6080/tenpo-api/logout/georgeryan",
 					"host": [
 						"localhost"
 					],
@@ -124,7 +124,7 @@
 					"path": [
 						"tenpo-api",
 						"logout",
-						"sanjanamurugesan"
+						"georgeryan"
 					]
 				}
 			},
@@ -168,7 +168,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:6080/tenpo-api/getAuditDetails",
+					"raw": "http://localhost:6080/tenpo-api/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -176,7 +176,7 @@
 					"port": "6080",
 					"path": [
 						"tenpo-api",
-						"getAuditDetails"
+						""
 					]
 				}
 			},
