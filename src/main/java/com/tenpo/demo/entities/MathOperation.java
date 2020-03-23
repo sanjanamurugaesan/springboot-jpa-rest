@@ -8,7 +8,7 @@ import java.sql.Date;
 
 
 @Entity
-@Table(name="audit_math_operation", schema="td")
+@Table(name="audit_math_operation", schema="public")
 public class MathOperation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

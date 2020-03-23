@@ -1,10 +1,9 @@
 package com.tenpo.demo.entities;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
-@Table(name="user_registration", schema="td",uniqueConstraints=@UniqueConstraint(columnNames={"email_id", "user_id"}))
+@Table(name="user_registration", schema="public",uniqueConstraints=@UniqueConstraint(columnNames={"email_id", "user_id"}))
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
